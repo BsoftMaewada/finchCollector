@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" 
+    crossorigin="anonymous"></script>
+    <title>Finch Collector - {% block title %}{% endblock %}</title> 
+  </head>
+  <body >
+    <header class='navbar-fixed'>
+        <nav>
+            <div class='navbar-wrapper'>
+                <ul>
+                    <li><a href='/' class='left brand-logo'>&nbsp;FinchCollector</a></li>
+                </ul>
+                 <ul class='right'>
+                    <li><a href='/about'>About</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer class='page-footer'>
+        <div class='right'> All rights reserved, &copy; 2021 Finch Collector &nbsp;</div>
+    </footer>
+  
+  </body>
+  </html>
