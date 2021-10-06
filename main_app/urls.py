@@ -4,7 +4,9 @@ from . import views
 urlpatterns = [
     # path('route string', name of view function, name="string name of route"),
     # example
-    #path('artists/', views.Artist_List.as_view(), name="artist_list"),
-    #added the new path
+   
+    #defining the home page
     path('', views.Home.as_view(), name='home'),
+    path('about/', views.About.as_view(), name='about'),
+    
 ]

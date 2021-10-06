@@ -5,4 +5,7 @@ from django.http import HttpResponse #a class to handle sending a type of respon
 # Create your views here.
 class Home(View):
     def get(self, request):
-        return HttpResponse('finchCollector Home')
+        return HttpResponse('home.html')
+class About(View):
+    def get (self, request):
+        return HttpResponse('abount.html')
