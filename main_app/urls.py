@@ -11,6 +11,6 @@ urlpatterns = [
 # Map the route to a view named views.about.
     path('about/', views.About.as_view(), name='about'),
     #rout for finch index
-    path('finches/', views.Finches.as_view(), name='finches')
+    path('finches/', views.finches_index, name='index'),
     
 ]
