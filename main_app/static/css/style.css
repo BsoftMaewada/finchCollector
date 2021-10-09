@@ -1,8 +1,8 @@
 body{
-    display: flex;
+    display: grid;
     min-height: 100vh;
     flex-direction: column;
-    background-color: aquamarine;
+    background-color: #ac8a8b;
 }
 
 main{

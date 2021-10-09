@@ -1,5 +1,6 @@
 from django.urls import path
-from . import views
+from . import views 
+
 
 urlpatterns = [
 # path('route string', name of view function, name="string name of route"),
@@ -11,6 +12,6 @@ urlpatterns = [
 # Map the route to a view named views.about.
     path('about/', views.About.as_view(), name='about'),
     #rout for finch index
-    path('finches/', views.finches_index, name='index'),
+    path('index/', views.Index.as_view(), name='index'),
     
 ]
