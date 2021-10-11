@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form actions="" method='post'>
+    {% comment %} {% csrf_token %} is a security measure that makes it difficult to perform a 
+    cross-site-request-forgery by writing a CSRF token that is validated on the server {% endcomment %}
+    {% csrf_token %}
+    <table> 
+        {{ form.as_table }}
+    </table> 
+    <input type='submit' value='Submit' class='btn'>
+</form>
+
+<div class='card-action'>
+
+    <a href="{{ url 'finch_form' finch.id }}"> Edit</a>
+    <a href="{{ url 'finch_form' finch.id }}"> Delete</a>
+
+</div>
+
+{% endblock %}

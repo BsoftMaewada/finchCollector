@@ -13,5 +13,11 @@ urlpatterns = [
     path('about/', views.About.as_view(), name='about'),
     #rout for finch index
     path('index/', views.Index.as_view(), name='index'),
+    # path('index/<int:finches_id>/', views.finches_detail, name='detail'),
+   
+    path('index/create/', views.FinchCreate.as_view(), name='finch_form'),
+    path('index/<int:pk>/update', views.FinchUpdate.as_view(), name='finch_form'),
+    path('index/<int:pk>/delete', views.FinchDelete.as_view(), name='finch_form'),
+    
     
 ]

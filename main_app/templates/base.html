@@ -1,5 +1,6 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,12 +10,13 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <script src="{% static 'scripts/main.js' %}" defer></script>
     <title>Finch Collector - {% block title %}{% endblock %}</title> 
   </head>
-  <body class="#ffebee red lighten-5">
+  <body class="#eceff1 blue-grey lighten-5">
     <header class='navbar-fixed'>
         <nav>
             <div class='navbar-wrapper'>
@@ -22,9 +24,10 @@
                     <li><a href='/' class='left brand-logo'>&nbsp;Finch Collector</a></li>
                 </ul>
                  <ul class='right'>
-                    <li><a href='/about'>About</a></li>
+                    <li><a href= {% url 'about' %}>About</a></li>
+                    <li><a href={% url 'finch_form' %}>Add a Finch </a></li>
                     <!-- new markup listing all finches -->
-                    <li><a href="/index">View All My Finches</a></li>
+                    <li><a href={% url 'index' %}>View All My Finches</a></li>
                 </ul>
             </div>
         </nav>
