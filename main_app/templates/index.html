@@ -22,20 +22,25 @@
 <div class="row">
     <div class="col s12 m7 l11">
         <div class="card horizontal">
-                <div class="card-image waves-effect waves-block waves-light">
-                    <img class="activator" src="{{finch.img}}" alt="{{finch.name}}" />
-                    <span class="card-title">{{finch.name}}</span>
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{{finch.img}}" alt="{{finch.name}}" />
+                <span class="card-title">{{finch.name}}</span>
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <p> Scientific Name: {{ finch.scientific_name }}</p>
+                    <p> Adult Size: {{ finch.adult_size }}</p>
+                    <p> LifeSpan: {{ finch.lifespan }}</p>
                 </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <p> Scientific Name: {{ finch.scientific_name }}</p>
-                        <p> Adult Size: {{ finch.adult_size }}</p>
-                        <p> LifeSpan: {{ finch.lifespan }}</p>
-                    </div>
+                <div class='card-action'>
+                    <a href="{% url 'finch_form' finch.pk %}"> Edit</a>
+                    <a href="{% url 'finch_delete' finch.pk %}"> Delete</a>
                 </div>
-        </div>
+            </div> 
+        </div> 
     </div>
 </div>
+
 {% endfor %}
 
 

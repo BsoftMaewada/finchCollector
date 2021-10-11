@@ -5,7 +5,7 @@ from django.http import HttpResponse #a class to handle sending a type of respon
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Finch
 
-from django.views.generic import DetailView
+from django.urls import reverse
 
 
 # Create your views here.
@@ -53,24 +53,31 @@ class Index(TemplateView):
         context["finchs"] = Finch.objects.all()
         return context
     
-class FinchDetail(DetailView):
-    model = Finch
-    template_name = "finch_detail.html"
+# class FinchDetail(DetailView):
+#     model = Finch
+#     template_name = "finch_detail.html"
 
 class FinchCreate(CreateView):
     model = Finch
     fields = ['name','img', 'scientific_name', 'adult_size', 'lifespan',]
     template_name = "finch_form.html"
-    success_url = "/index/"
+    # success_url = "/index/"
+     # this will get the pk from the route and redirect to artist view
+    def get_success_url(self):
+        return reverse('/index/', kwargs={'pk': self.object.pk})
 
 class FinchUpdate(UpdateView):
     model = Finch
     fields = ['scientific_name', 'adult_size', 'lifespan',]
     template_name = "finch_form.html"
     # success_url = "/index/"
+    def get_success_url(self):
+        return reverse('/index/', kwargs={'pk': self.object.pk})
     
 class FinchDelete(DeleteView):
     model = Finch
     # fields = ['name','img', 'scientific_name', 'adult_size', 'lifespan',]
-    template_name = "finch_form.html"
-    # success_url = "/index/"
+    template_name = "finch_delete.html"
+    success_url = "/index/"
+    
+    
