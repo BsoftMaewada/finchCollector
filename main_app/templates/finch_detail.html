@@ -1,15 +1,76 @@
-{% for finch in finchs %}
+{% extends 'base.html' %}
+{% block content %}
+
+
+{% comment %} {% for finch in finchs %}
 <!-- Here we are changing the href of the a tag to use the url DTL -->
   <a href="{% url 'finch_detail' finch.pk %}">
     <div class="card">
       <div class="card-image">
-        <figure class="image is-square">
           <img src="{{finch.img}}" alt="{{finch.name}}" />
-        </figure>
       </div>
       <div class="card-header">
         <p class="card-header-title">{{finch.name}}</p>
       </div>
     </div>
-  </a>
-  {% endfor %}
+  </a> {% endcomment %}
+
+
+<h1> Finch Details</h1>
+  
+{% for finch in finchs %}
+<div class="row">
+    <div class="col s12 m7 l11">
+        <div class="card horizontal">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="{{finch.img}}" alt="{{finch.name}}" />
+                <div class="">
+                    {% if finch.verified_finch %}
+                        <div class="">
+                            <span class="">
+                            <i class=""></i>
+                            </span>
+                            <span>Verified</span>
+                        </div>
+                    {% endif %}
+                <span class="card-title">{{finch.name}}</span>
+            </div>
+            <div class="card-stacked">
+                <div class="card-content">
+                    <p> Scientific Name: {{ finch.scientific_name }}</p>
+                    <p> Adult Size: {{ finch.adult_size }}</p>
+                    <p> LifeSpan: {{ finch.lifespan }}</p>
+                </div>
+                <div class='card-action'>
+                    <a href="{% url 'finch_form' finch.pk %}"> Edit</a>
+                    <a href="{% url 'finch_delete' finch.pk %}"> Delete</a>
+                </div>
+            </div> 
+        </div> 
+    </div>
+</div>
+
+
+{% endfor %}
+
+
+
+    {% comment %} <div class=" detail_behavior">
+                    
+                            {% for behavior in finch.behaviors.all %}
+                                <div class="behavior">
+                                    <span><b>{{behavior.title}}</b></span>
+                                    <div>
+                                        <h6> Aggression</h6>
+                                        <span>{{behavior.aggressions}}</span>
+                                    </div>
+                                    <div>
+                                        <h6> Egg Laying</h6>
+                                        <span>{{behavior.egg_laying}}</span>
+                                    </div>
+                                </div>
+
+                            {% endfor %}
+                    </div> {% endcomment %}
+
+{% endblock %}

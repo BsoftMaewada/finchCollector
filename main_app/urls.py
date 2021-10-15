@@ -19,6 +19,7 @@ urlpatterns = [
     # Our new Route including the pk param
     path('index/<int:pk>/update', views.FinchUpdate.as_view(), name='finch_form'),
     path('index/<int:pk>/delete', views.FinchDelete.as_view(), name='finch_delete'),
+    path('/detail/', views.FinchDetail.as_view(), name='finch_detail'),
     
     
 ]

@@ -8,14 +8,14 @@
 
 <h4>Are you sure you want to delete <span class='teal-text'>{{object.name}}</span></h4>
 
-<form actions="" method='POST'>
+<form  method='POST'>
     {% comment %} {% csrf_token %} is a security measure that makes it difficult to perform a 
     cross-site-request-forgery by writing a CSRF token that is validated on the server {% endcomment %}
     {% csrf_token %} 
-    <!-- confirm artist delete -->
+    <!-- confirm finch delete -->
     <input type='submit' value='Confirm' class='btn'>
      <!-- Redirect back to detail on cancel -->
-    <a class="waves-effect waves-teal btn-flat" href="{% url 'finch_delete' finch.pk %}"> Cancel</a>
+    <a class="waves-effect waves-teal btn-flat" href="{% url 'finch_detail'  %}"> Cancel</a>
 
 </form>
 
