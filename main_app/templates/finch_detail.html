@@ -18,22 +18,15 @@
 
 <h1> Finch Details</h1>
   
-{% for finch in finchs %}
+{% comment %} {% for finch in finchs %} {% endcomment %}
 <div class="row">
     <div class="col s12 m7 l11">
         <div class="card horizontal">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="{{finch.img}}" alt="{{finch.name}}" />
                 <div class="">
-                    {% if finch.verified_finch %}
-                        <div class="">
-                            <span class="">
-                            <i class=""></i>
-                            </span>
-                            <span>Verified</span>
-                        </div>
-                    {% endif %}
-                <span class="card-title">{{finch.name}}</span>
+                    <span class="card-title">{{finch.name}}</span>
+                </div>
             </div>
             <div class="card-stacked">
                 <div class="card-content">
@@ -51,8 +44,7 @@
 </div>
 
 
-{% endfor %}
-
+{% comment %} {% endfor %} {% endcomment %}
 
 
     {% comment %} <div class=" detail_behavior">
