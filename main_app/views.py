@@ -76,10 +76,10 @@ class FinchUpdate(UpdateView):
     #     return reverse('/index/', kwargs={'pk': self.object.pk})
     
 class FinchDelete(DeleteView):
-    model = Finch
-    # fields = ['name','img', 'scientific_name', 'adult_size', 'lifespan',]
-    template_name = "finch_delete.html"
-    success_url = "/finch_detail/"
+    # model = Finch
+    # # fields = ['name','img', 'scientific_name', 'adult_size', 'lifespan',]
+    # template_name = "finch_delete.html"
+    # success_url = "/finch_detail/"
     
    
 
